@@ -32,7 +32,7 @@ app.post("/posts/:id/comments", async(req, res) => {
     },
   });
 
-  res.json(comments);
+  res.send({});
 });
 
 
