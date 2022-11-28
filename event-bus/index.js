@@ -12,10 +12,20 @@ app.post("/events", async (req, res) => {
 
   events.push(event);
 
-  await axios.post("http://localhost:3001/events", event);
-  await axios.post("http://localhost:3002/events", event);
-  await axios.post("http://localhost:3003/events", event);
-  await axios.post("http://localhost:3004/events", event);
+  await axios.post("http://localhost:3001/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  await axios.post("http://localhost:3002/events", event).catch((err) => {
+    console.log(err.message);
+  });
+
+  await axios.post("http://localhost:3003/events", event).catch((err) => {
+    console.log(err.message);
+  });
+
+  await axios.post("http://localhost:3004/events", event).catch((err) => {
+    console.log(err.message);
+  });
 
   res.send({ status: "Ok" });
 });

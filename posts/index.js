@@ -10,6 +10,10 @@ app.use(cors());
 
 const posts = {};
 
+const handlePosts = (type, data) => {
+  
+}
+
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
@@ -29,6 +33,8 @@ app.post("/posts", async (req, res) => {
       id,
       title,
     },
+  }).catch((err) => {
+    console.log(err.message);
   });
 
   res.status(201).send(posts[id]);
