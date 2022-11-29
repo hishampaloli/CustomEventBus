@@ -42,7 +42,7 @@ app.listen(3004, async () => {
       const res = await axios.get("http://localhost:3005/events");
   
       for (let event of res.data) {
-        console.log("Processing event: ", event.type);
+        console.log("Processing event:", event.type);
     
         handleModeration(event.type, event.data);
       }
