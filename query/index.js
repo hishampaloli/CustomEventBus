@@ -48,7 +48,7 @@ app.post("/events", async (req, res) => {
 });
 
 app.listen(3003, async () => {
-  console.log("QUERY server");
+  console.log("QUERY Server");
 
   try {
     const res = await axios.get("http://localhost:3005/events");
